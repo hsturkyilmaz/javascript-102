@@ -1,0 +1,110 @@
+<!-- JavaScript String Metodları -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript String Metodları</title>
+</head>
+<body style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+  <h2>JavaScript String Metodları</h2>
+
+  <p>▌length metodu "Lime or Lemon Studios" stringinin uzunluğunu veriyor:</p>
+
+  <p id="length"></p>
+
+  <p>▌indexOf metodu kendisine verilen "Lemon" kelimesini "Lime or Lemon Studios Lime or Lemon" metninin içinde arıyor ve bulduğu ilk değerin sıra numarasını veriyor:</p>
+
+  <p id="indexOf"></p>
+
+  <p>▌lastIndexOf metodu kendisine verilen "Lemon" kelimesini "Lime or Lemon Studios Lime or Lemon" metninin içinde arıyor ve bulduğu son değerin sıra numarasını veriyor:</p>
+
+  <p id="lastIndexOf"></p>
+
+  <p>▌slice() metodu "Lime or Lemon Studios" stringinin 8 ve 13 indeks numarası arasındaki bölümü metnin içinden çıkartıyor ve yeni bir string değer olarak döndürüyor:</p>
+  <p style="margin-left: 16px;">*substring() metodu da buna benzerdir. Tek farkı substring() metodu negatif değer almaz. </p>
+
+  <p id="splice"></p>
+
+  <p>▌substr() metodu "Lime or Lemon Studios" stringinin 8 indeks numarasından başlayıp 5 değer alarak metnin içinden çıkartıyor ve yeni bir string değer olarak döndürüyor:</p>
+
+  <p id="substr"></p>
+
+  <p>▌replace metodu, şağıdaki metindeki "or"u, "and" ile değiştirilecektir:</p>
+  <p style="margin-left: 16px;">*Eğer metnin içinde birden fazla "or" olsaydı ve tümünü bir anda değiştirmek isteseydik regular expression olarak yazardık. (/or/g şeklinde)</p>
+
+  <button onclick="degistir()">Değiştir</button>
+
+  <p id="replace">Lime or Lemon Studios</p>
+
+  <p>▌toUpperCase() metodu aşağıdaki metindeki karakterlerin tamamını büyük harfe çevirecektir:</p>
+
+  <button onclick="buyut()">Büyüt</button>
+
+  <p id="touppercase">Lime or Lemon Studios</p>
+
+  <p>▌toLowerCase() metodu aşağıdaki metindeki karakterlerin tamamını küçük harfe çevirecektir:</p>
+
+  <button onclick="kucult()">Küçült</button>
+
+  <p id="tolowercase">Lime or Lemon STUDIOS</p>
+
+  <p>▌concat() metodu "Lime" ve "Lemon" stringlerini birleştirip ortalarına "or" ekliyor:</p>
+
+  <p id="concat"></p>
+
+  <p>▌Elimizde Lime, Lemon, Orange, Mandarin şeklinde virgül ile ayrılmış turunçgiller verimiz olsun. split() metodu ile bu veriyi ayrıştırmak ve meyveleri bir diziye yerleştirmek mümkündür. Index değeri 1 olan veri:</p>
+
+  <p id="split"></p>
+
+  <script>
+
+  var company = "Lime or Lemon Studios";
+  document.getElementById("length").innerHTML = company.length;
+
+  var metin = "Lime or Lemon Studios Lime or Lemon";
+  document.getElementById("indexOf").innerHTML = metin.indexOf("Lemon");
+
+  var metin2 = "Lime or Lemon Studios Lime or Lemon";
+  document.getElementById("lastIndexOf").innerHTML = metin.lastIndexOf("Lemon");
+
+  var str = "Lime or Lemon Studios";
+  var sonuc1 = str.slice(8, 13);
+  document.getElementById("splice").innerHTML = sonuc1; 
+
+  var str2 = "Lime or Lemon Studios";
+  var sonuc2 = str.substr(8, 5);
+  document.getElementById("substr").innerHTML = sonuc2; 
+
+  function degistir() {
+    var str3 = document.getElementById("replace").innerHTML; 
+    var txt = str3.replace("or","and");
+    document.getElementById("replace").innerHTML = txt;
+  }
+
+  function buyut() {
+      var str4 = document.getElementById("touppercase").innerHTML; 
+      var buyuk = str4.toUpperCase();
+      document.getElementById("touppercase").innerHTML = buyuk;
+  }
+
+  function kucult() {
+      var str5 = document.getElementById("tolowercase").innerHTML; 
+      var kucuk = str5.toLowerCase();
+      document.getElementById("tolowercase").innerHTML = kucuk;
+  }
+
+  var metin1 = "Lime";
+  var metin2 = "Lemon";
+  var metin3 = metin1.concat(" or ", metin2);
+  document.getElementById("concat").innerHTML = metin3;
+
+  var turuncgiller = "Lime, Lemon, Orange, Mandarin";
+  var turuncDizi = turuncgiller.split(",");
+  document.getElementById("split").innerHTML = turuncDizi[1];
+
+  </script>
+</body>
+</html>

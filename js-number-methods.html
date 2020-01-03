@@ -1,0 +1,112 @@
+<!-- JavaScript Number Metodları -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript Number Metodları</title>
+</head>
+<body style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+  <h2>JavaScript Number Metodları</h2>
+  <p>▌Number veri türünü sadece sayısal işlemlerde kullanırız. Bunun dışında sayıyı string olarak işleyeceksek, number'ı string'e çeviririz.</p>
+
+  <p id="tostring"></p>
+
+  <p>▌toFixed() metodu, belirtilen sayıda ondalık değere sahip string döndürür. Para gibi değerleri tutan değişkenlerde kullanılır.</p>
+
+  <p id="tofixed"></p>
+  
+  <p>▌toPrecision(n) metodu uygulanan sayı, parentez içinde verilen değerden daha fazla tam sayı içeriyorsa bilimsel (üstel) gösterim ile döndürür. Ayrıca bu metod daha çok ondalıklı işlemlerde kullanılır. Parantez içinde verilen sayı kadar basamağı size döndürür.</p>
+
+  <p>toFixed() ve toPrecision() metodu arasındaki fark:
+    var A = 123.456789; <br>
+    <br>
+    A.toFixed()      // 123 <br>
+    A.toFixed(0)     // 123 <br>
+    A.toFixed(1)     // 123.5 <br>
+    A.toFixed(2)     // 123.46 <br>
+    A.toFixed(3)     // 123.457 <br>
+    A.toFixed(4)     // 123.4568 <br>
+    A.toFixed(5)     // 123.45679 <br>
+    A.toFixed(6)     // 123.456789 <br>
+    A.toFixed(7)     // 123.4567890 <br>
+    A.toFixed(8)     // 123.45678900 <br>
+    A.toFixed(9)     // 123.456789000 <br>
+    A.toFixed(10)    // 123.4567890000 <br>
+    A.toFixed(11)    // 123.45678900000 <br>
+    <br>
+    A.toPrecision()      // 123.456789  <br>
+    A.toPrecision(0)     // --- ERROR ---  <br>
+    A.toPrecision(1)     // 1e+2 <br>
+    A.toPrecision(2)     // 1.2e+2 <br>
+    A.toPrecision(3)     // 123 <br>
+    A.toPrecision(4)     // 123.5 <br>
+    A.toPrecision(5)     // 123.46 <br>
+    A.toPrecision(6)     // 123.457 <br>
+    A.toPrecision(7)     // 123.4568 <br>
+    A.toPrecision(8)     // 123.45679 <br>
+    A.toPrecision(9)     // 123.456789 <br>
+    A.toPrecision(10)    // 123.4567890 <br>
+    A.toPrecision(11)    // 123.45678900 <br>
+  </p>
+  
+  <p>▌Number() metodu JavaScript değişkenlerini sayıya çevirmek için kulllanılır:</p>
+
+  <p>
+    degisken = true; <br>
+    Number(degisken);        //  1 döndürür <br>
+    <br>
+    degisken = false; <br>
+    Number(degisken);        //  0 döndürür <br>
+    <br>
+    degisken = "10" <br>
+    Number(degisken);        //  10 döndürür <br>
+    <br>
+    degisken = "50 50" <br>
+    Number(degisken);        // NaN döndürür <br>
+  </p>
+
+  <p>▌parseInt() string değeri ayrıştırır, geriye tam sayı döndürür:</p>
+  
+  <p>
+    parseInt("5");         // 5 döndürür <br>
+    <br>
+    parseInt("5.22");      // 5 döndürür <br>
+    <br>
+    parseInt("5 10 15");   // 5 döndürür <br>
+    <br>
+    parseInt(5 yıl");      //5 döndürür <br>
+    <br>
+    parseInt("sinif 5");   // NaN döndürür <br>
+  </p>
+
+  <p>▌parseFloat() string değeri ayrıştırır, geriye  sayı döndürür. parseInt() metodundan farklı olarak varsa ondalık haneyi de döndürür:</p>
+
+  <p>
+    parseFloat("5");         // 5 döndürür <br>
+    <br>
+    parseFloat("5.22");      // 5.22 döndürür <br>
+    <br>
+    parseFloat("5 10 15");   // 5 döndürür <br>
+    <br>
+    parseFloat(5 yıl");      //5 döndürür <br>
+    <br>
+    parseFloat("sinif 5");   // NaN döndürür <br>
+  </p>
+  <script>
+
+  var number = 3460;
+  document.getElementById("tostring").innerHTML = "Number string'e çevrildi: " + number.toString();
+
+  var sayi = 9.765;       
+  document.getElementById("tofixed").innerHTML = 
+  " 9.765 değeri için: <br>" 
+  + "sayi.toFixed(0): " + sayi.toFixed(0) + "<br>"
+  + "sayi.toFixed(2): " + sayi.toFixed(2) + "<br>"
+  + "sayi.toFixed(4): " + sayi.toFixed(4) + "<br>"
+  + "sayi.toFixed(6): " + sayi.toFixed(6) + "<br>";
+  </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!-- JavaScript Array Metodları -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript Array Metodları</title>
+</head>
+<body style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+  <h1>JavaScript Array Metodları</h1>
+
+  <h3>Array'imiz: ["Lime", "Lemon", "Orange", "Mandarin"]</h3>
+
+  <p>▌toString() metodu array'i virgüllerle ayrılmış string'e çeviriyor:</p>
+
+  <p id="tostring"></p>
+
+  <p style="margin-left: 16px;">▌JavaScript her zaman bir diziyi yazdırmak istediğinizde onu String'e çevirir. toString() metodunu kullanmasak bile böyledir çünkü tüm JavaScript objeleri toString() metoduna sahiptir.</p>
+
+  <p id="tostring2"></p>
+
+  <p>▌join() metodu array'i string'e çevirirken ayracı biz belirleyebiliriz:</p>
+
+  <p id="join"></p>
+  <p id="join2"></p>
+
+  <p>▌pop() metodu dizideki son elemanı diziden çıkarıyor:</p>
+
+  <p id="pop"></p>
+
+  <p style="margin-left: 16px;">▌pop() metodu diziden çıkarılan elemanın ismini de döndürebilir:</p>
+  
+  <p id="pop2"></p>
+
+  <p>▌push() metodu dizinin sonuna yeni eleman ekliyor:</p>
+
+  <p id="push"></p>
+
+  <p>▌shift() metodu da pop() metodu gibi fakat son elemanı değil ilk elemanı diziden çıkarıyor ve çıkarılan eleman yerine bütün diziyi çıkarılan 0 index numarasına göre tekrar kaydırıyor:</p>
+
+  <p id="shift"></p>
+
+  <p style="margin-left: 16px;">▌shift() metodu geriye diziden çıkarılan elemanın değerini de döndürebilir:</p>
+
+  <p id="shift2"></p>
+
+  <p>▌unshift() metodu dizinin başına yeni bir eleman ekleyip eski elemanları kaydırıyor:</p>
+
+  <p id="unshift"></p>
+
+  <p style="margin-left: 16px;">▌unshift() metodu geriye dizinin yeni uzunluğunu da döndürebilir:</p>
+
+  <p id="unshift2"></p>
+
+  <p>▌Dizi elemanlarına ulaşmak için index numaralarını kullanarak Orange'ı Grapefruit ile değiştirdik:</p>
+
+  <p id="index"></p>
+
+  <p style="margin-left: 16px;">▌"length" özelliği dizinin sonuna yeni bir eleman eklemeyi kolaylaştırır:</p>
+
+  <p id="length"></p>
+
+  <p>▌Diziler JavaScript'te obje olarak kabul edildiklerinden, objeler için kullanılan delete komutu diziler için de kullanarak "Orange"ı diziden siliyoruz:</p>
+
+  <p id="delete"></p>
+
+  <p style="margin-left: 16px;">▼ "delete" komutunu kullanmak, dizide undefined boşluklar oluşturacağından, pop() veya shift() metodlarını kullanmalıyız.</p>
+
+  <p>▌splice() metodu diziye yeni elemanlar eklemek için kullanılabilir:</p>
+
+  <p id="splice"></p>
+
+  <p style="margin-left: 16px;">▌splice() metodu geriye silinen elemanların olduğu bir dizi de döndürebilir:</p>
+
+  <p id="splice2"></p>
+
+  <p style="margin-left: 32px;">▌splice() metodunu doğru parametrelerle kullanarak dizide boşluklar bırakmadan eleman silerken kullanabiliriz:</p>
+
+  <p id="splice3"></p>
+
+  <p>▌concat() metodu var olan dizileri uç uca ekleyerek yeni bir dizi oluşturur. ayrıca dizilerle değerleri de birleştirebilir. concat() metodu, "meyveler", "sebzeler" ve "mantarlar" dizilerini birleştiriyor:</p>
+
+  <p id="concat"></p>
+
+  <p>▌slice() metodu dizinin belirttiğimiz bir kısmını yeni bir diziye aktarıyor: (ilk örnekte 2. elemandan başlıyor, ikinci örnekteyse 0 ile 2 arasında kadar olan elemanları seçiyor.)</p>
+
+  <p id="slice"></p>
+
+  <p id="slice2"></p>
+
+  <script>
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  document.getElementById("tostring").innerHTML = meyveler.toString();
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  document.getElementById("tostring2").innerHTML=meyveler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  document.getElementById("join").innerHTML = meyveler.join(" - ");
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  document.getElementById("join2").innerHTML = meyveler.join(" or ");
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  meyveler.pop();
+  document.getElementById("pop").innerHTML = meyveler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  var isim = meyveler.pop();
+  document.getElementById("pop2").innerHTML=isim;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  meyveler.push("Grapefruit");
+  document.getElementById("push").innerHTML = meyveler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  meyveler.shift();
+  document.getElementById("shift").innerHTML = meyveler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  var isim = meyveler.shift();
+  document.getElementById("shift2").innerHTML=isim;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  meyveler.unshift("Grapefruit");
+  document.getElementById("unshift").innerHTML=meyveler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  var sayi = meyveler.unshift("Grapefruit");
+  document.getElementById("unshift2").innerHTML = sayi;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  meyveler[2] = "Grapefruit";
+  document.getElementById("index").innerHTML = meyveler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  meyveler[meyveler.length] = "Grapefruit";
+  document.getElementById("length").innerHTML = meyveler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  delete meyveler[2];
+  document.getElementById("delete").innerHTML = meyveler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  meyveler.splice(2, 2, "Bitter Orange", "Grapefruit");
+  document.getElementById("splice").innerHTML = meyveler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  var isim = meyveler.splice(2, 2, "Bitter Orange", "Grapefruit");
+  document.getElementById("splice2").innerHTML = isim;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  meyveler.splice(3, 1);
+  document.getElementById("splice3").innerHTML = meyveler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  var sebzeler = ["Carrot", "Spinach", "Cucumber", "Onion"];
+  var mantarlar = ["Oyster Mushroom", "Truffle"]
+  var yiyecekler = meyveler.concat(sebzeler, mantarlar);
+  document.getElementById("concat").innerHTML = yiyecekler;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  var yeniDizi = meyveler.slice(2);
+  document.getElementById("slice").innerHTML = yeniDizi;
+
+  var meyveler = ["Lime", "Lemon", "Orange", "Mandarin"];
+  var yeniDizi = meyveler.slice(0, 2);
+  document.getElementById("slice2").innerHTML = yeniDizi;
+
+  </script>    
+</body>
+</html>
+
+
+<!--  
+["Lime", "Lemon", "Orange", "Mandarin"]
+-->
